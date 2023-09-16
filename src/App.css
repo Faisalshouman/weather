@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+
+.MuiTypography-root , h5 {
+  color: #f4f4f2e8;
+}
