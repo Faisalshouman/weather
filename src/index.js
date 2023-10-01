@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { Provider } from 'react-redux'
+import { configureStore } from '@reduxjs/toolkit';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import weatherAPIsliceReducer from './weatherAPIslice'; // Correct filename
+
+
+
+const store = configureStore(
+  {
+    reducer: {
+      weather: weatherAPIsliceReducer
+    },
+  }
+)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+  <Provider store={store}>
     <App />
+  </Provider>
   </React.StrictMode>
 );
 
